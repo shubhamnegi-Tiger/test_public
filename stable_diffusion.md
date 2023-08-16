@@ -31,7 +31,7 @@ Sampling step: 55
 CFG Scale = 7
 seed : 3972808974
 
-<a name="_toc135249780"></a>**SDv2.1**: Stable Diffusion 2.1 is a state-of-the-art machine learning model introduced in 2022, primarily designed for High-Resolution Image Synthesis with Latent Diffusion. The model excels in generating detailed and high-quality images conditioned on text descriptions.
+<a name="_toc135249780"></a>**SDv2.1**: Stable Diffusion 2.1 is a state-of-the-art machine learning model introduced in Dec 7, 2022, primarily designed for High-Resolution Image Synthesis with Latent Diffusion. The model excels in generating detailed and high-quality images conditioned on text descriptions.
 
 ![3](https://user-images.githubusercontent.com/110606035/260971806-ab2da5cd-222c-4966-a6c2-a3ceaa432880.png)
 
@@ -42,7 +42,7 @@ sampling step: 45
 CFG Scale = 7
 seed : 3972808974
 
-<a name="_toc135249780"></a>**SDXL 1.0**: SDXL 1.0, short for “Stable Diffusion XL,” is touted as a latent text-to-image diffusion model that supposedly surpasses its predecessors with a range of promising enhancements.
+<a name="_toc135249780"></a>**SDXL 1.0**: SDXL 1.0, short for “Stable Diffusion XL,” is touted as a latent text-to-image diffusion model that supposedly surpasses its predecessors with a range of promising enhancements.It was released on July 26, 2023
 
 ![4](https://user-images.githubusercontent.com/110606035/260971922-41b8bb75-d81f-4695-a6af-21cef4f1746c.png)
 
@@ -53,6 +53,8 @@ sampling step: 55
 CFG Scale = 7
 seed : 4022988122
 
+<a name="_toc135249780"></a>**Deliberate**: Deliberate - v2 is an open source model based on fine tuning of SDv1.5. It was released in Feb 25, 2023
+
 ![5](https://user-images.githubusercontent.com/110606035/260972040-d866924c-15f0-4439-ace5-fe2cf9bbbb57.png)
 
 Figure 5: Image created through Deliberate2 
@@ -61,6 +63,8 @@ Sampling method: DPM++ SDE Karras
 Sampling step: 45
 CFG Scale = 7
 seed : 3972808974
+
+<a name="_toc135249780"></a>**RealisticVision**: Realistic Vision V5.0 is an open source model based on fine tuning of SDv1.5. It was released in Jul 25, 2023
 
 ![6](https://user-images.githubusercontent.com/110606035/260972209-285ef46d-1864-410b-8537-dead427e6f13.png)
 
@@ -71,6 +75,8 @@ sampling step: 55
 CFG Scale = 7
 seed : 3972808974
 
+<a name="_toc135249780"></a>**LoRA**: LoRA (Low-Rank Adaptation) is a training technique for fine-tuning Stable Diffusion models. LoRA models operate by applying minute changes to the most critical part of Stable Diffusion models—the cross-attention layers. This is the part where the image and the prompt intersect, and researchers have found that fine-tuning this section yields excellent training results.
+
 ![7](https://user-images.githubusercontent.com/110606035/260972276-56dc72f6-2af3-4f93-8871-0fc1b67c4492.png)
 
 Figure 7: Image created by Training LoRA
@@ -80,7 +86,10 @@ Learning Rate: 0.0004
 Optimizer: Adafactor
 Number of Images:9
 
+<a name="_toc135249780"></a>**Textual inversion**: Textual inversion is a technique that allows us to add new styles or objects to text-to-image models without modifying the underlying model.
+
 ![8](https://user-images.githubusercontent.com/110606035/261001686-a6cd3ecb-d6b9-45fc-9241-65b7ea437463.png)
+
 Figure 8: Image created by Training Textual Inversion
 Base Model: SDv1.5
 Number of Epochs:3000
@@ -88,10 +97,13 @@ Learning Rate: 0.05:10, 0.02:20, 0.01:60, 0.005:200, 0.002:500, 0.001:3000, 0.00
 Optimizer: Adafactor
 Number of Images:9
 
+<a name="_toc135249780"></a>**DreamBooth**: DreamBooth is a method to personalize text-to-image models like Stable Diffusion given just a few (3-5) images of a subject. It allows the model to generate contextualized images of the subject in different scenes, poses, and views.
+
 ![9](https://user-images.githubusercontent.com/110606035/261001294-0b89065a-cefc-491b-9b57-ed6bdad42238.png)
+
 Figure 9: Image created by Training DreamBooth
 Base Model: SDv1.5
 Number of Epochs:800
 Learning Rate: 0.00001
-Optimizer: *bit_adam
+Optimizer: 8bit_adam
 Number of Images:9
