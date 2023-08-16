@@ -73,4 +73,25 @@ seed : 3972808974
 
 ![2](https://user-images.githubusercontent.com/110606035/260972276-56dc72f6-2af3-4f93-8871-0fc1b67c4492.png)
 
+Figure 7: Image created by Training LoRA
+Base Model: SDv1.5
+Number of Epochs:100
+Learning Rate: 0.0004
+Optimizer: Adafactor
+Number of Images:9
+
 ![7](https://user-images.githubusercontent.com/110606035/260998552-0cc1c604-44a4-4268-ae8e-4eea32e3143d.png)
+Figure 7: Image created by Training Textual Inversion
+Base Model: SDv1.5
+Number of Epochs:3000
+Learning Rate: 0.05:10, 0.02:20, 0.01:60, 0.005:200, 0.002:500, 0.001:3000, 0.0005
+Optimizer: Adafactor
+Number of Images:9
+
+![11](https://user-images.githubusercontent.com/110606035/261001294-0b89065a-cefc-491b-9b57-ed6bdad42238.png)
+Figure 7: Image created by Training DreamBooth
+Base Model: SDv1.5
+Number of Epochs:800
+Learning Rate: 0.00001
+Optimizer: *bit_adam
+Number of Images:9
