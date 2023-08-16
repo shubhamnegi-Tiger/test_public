@@ -72,3 +72,5 @@ CFG Scale = 7
 seed : 3972808974
 
 ![2](https://user-images.githubusercontent.com/110606035/260972276-56dc72f6-2af3-4f93-8871-0fc1b67c4492.png)
+
+![7](https://user-images.githubusercontent.com/110606035/260998552-0cc1c604-44a4-4268-ae8e-4eea32e3143d.png)
