@@ -365,6 +365,10 @@ Figure 7: Image created by Training LoRA
 
 Textual Inversion is a technique that allows us to add new styles or objects to text-to-image models without modifying the underlying model.
 
+![3](https://user-images.githubusercontent.com/110606035/261252441-5cd8c37e-5155-45a3-bdef-34f63b621a8a.png)
+
+Textual inversion learns a new token embedding (v* in the diagram above). A prompt (that includes a token which will be mapped to this new embedding) is used in conjunction with a noised version of one or more training images as inputs to the generator model, which attempts to predict the denoised version of the image. The embedding is optimized based on how well the model does at this task - an embedding that better captures the object or style shown by the training images will give more useful information to the diffusion model and thus result in a lower denoising loss. After many steps (typically several thousand) with a variety of prompt and image variants the learned embedding should hopefully capture the essence of the new concept being taught.
+
 ![9](https://user-images.githubusercontent.com/110606035/261001686-a6cd3ecb-d6b9-45fc-9241-65b7ea437463.png)
 
 Figure 9: Image created by Training Textual Inversion
@@ -404,9 +408,9 @@ While the current exploration of our text to image generation model has achieved
 
 * **Incorporating more diverse datasets:** Our current implementation uses a relatively small dataset for training the DreamBooth model (28 images). To improve the model's accuracy and versatility, we could consider incorporating larger and more diverse datasets. For example, we have to include more images which are from different angles and backgrounds.  
 
-* **Hyperparameter Tuning:** Currently we used `num_inference_steps` as 30 and `sampling method` as "Euler a". We can consider the other sampling methods available such as "DDLM" ,"PLMS", "DPM++ 2M Karras", "UniPC", "DPM++ SDE Karras ", "Heun" and more.
+* **Hyperparameter Tuning:** Currently we used `sampling method` as "Euler a", "DPM++ SDE Karras " and , "DPM++ 2M Karras". We can consider the other sampling methods available such as "DDLM" ,"PLMS", "UniPC", "Heun" and more.
 
-* **Fine-Tuning** Can explore more fine-tuning methods such as Textual Inversion , LoRA (Low-Rank Adaptation of Large Language Models ). 
+* **Fine-Tuning** Fine-Tuning can be done further more by changing Learning Rate, number of epochs and changing the base stable diffusion model.
 
 # Conclusion
 
