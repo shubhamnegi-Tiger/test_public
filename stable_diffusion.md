@@ -86,22 +86,39 @@ Figure 7: Image created by Training LoRA
 ||  Optimizer: Adafactor
 ||  Number of Images:9
 
+![8](https://user-images.githubusercontent.com/110606035/261230685-41e7a5d5-4dff-4eab-abf6-8acf1bc09b1b.png)
+
+Figure 8: Image generation of a person
+||  Base Model: RealisticVision5
+||  Number of Epochs:100
+||  Learning Rate: 0.0001
+||  Optimizer: Adafactor
+||  Number of Images:19
+
 <a name="_toc135249780"></a>**Textual inversion**: Textual inversion is a technique that allows us to add new styles or objects to text-to-image models without modifying the underlying model.
 
-![8](https://user-images.githubusercontent.com/110606035/261001686-a6cd3ecb-d6b9-45fc-9241-65b7ea437463.png)
+![9](https://user-images.githubusercontent.com/110606035/261001686-a6cd3ecb-d6b9-45fc-9241-65b7ea437463.png)
 
-Figure 8: Image created by Training Textual Inversion
+Figure 9: Image created by Training Textual Inversion
 ||  Base Model: SDv1.5
 ||  Number of Epochs:3000
 ||  Learning Rate: 0.05:10, 0.02:20, 0.01:60, 0.005:200, 0.002:500, 0.001:3000
 ||  Optimizer: Adafactor
 ||  Number of Images:9
 
+![9](https://user-images.githubusercontent.com/110606035/261229325-c2de9fa4-da18-4629-8f0a-66473e85c9fc.png)
+Figure 9: Training Textual Inversion on bowl of chocos
+|| Epoch 50
+|| Epoch 500
+|| Epoch 1500
+|| Epoch 2500
+|| Epoch 3000
+
 <a name="_toc135249780"></a>**DreamBooth**: DreamBooth is a method to personalize text-to-image models like Stable Diffusion given just a few (3-5) images of a subject. It allows the model to generate contextualized images of the subject in different scenes, poses, and views.
 
-![9](https://user-images.githubusercontent.com/110606035/261001294-0b89065a-cefc-491b-9b57-ed6bdad42238.png)
+![10](https://user-images.githubusercontent.com/110606035/261001294-0b89065a-cefc-491b-9b57-ed6bdad42238.png)
 
-Figure 9: Image created by Training DreamBooth
+Figure 10: Image created by Training DreamBooth
 ||  Base Model: SDv1.5
 ||  Number of Epochs:800
 ||  Learning Rate: 0.00001
@@ -111,12 +128,12 @@ Figure 9: Image created by Training DreamBooth
 <a name="_toc135249780"></a>**ControlNet**: ControlNet is a neural network structure to control diffusion models by adding extra conditions. It copys the weights of neural network blocks into a "locked" copy and a "trainable" copy. The "trainable" one learns your condition. The "locked" one preserves your model.Thanks to this, training with small dataset of image pairs will not destroy the production-ready diffusion models.
 ControlNet helps us to capture the outline of a photo (like an edge detector) and try to generate image on top of those outlines.
 
-![10](https://user-images.githubusercontent.com/110606035/261204604-f57c2cca-3dc3-4cc8-81f8-f03706f6375d.png)
+![11](https://user-images.githubusercontent.com/110606035/261204604-f57c2cca-3dc3-4cc8-81f8-f03706f6375d.png)
 
-Figure 10: ControlNet
+Figure 11: ControlNet
 
-![11](https://user-images.githubusercontent.com/110606035/261208156-d87c131b-59db-4220-8511-b5c877a433aa.png)
+![12](https://user-images.githubusercontent.com/110606035/261208156-d87c131b-59db-4220-8511-b5c877a433aa.png)
 
-Figure 11: A person image with different ethinicity using LoRA + ControlNet
+Figure 12: A person image with different ethinicity using LoRA + ControlNet
 
 Addtional Images are stored in https://docs.google.com/spreadsheets/d/16giicKZm9qsI-0wTvweU500r3ag3vhNac70bwAuntLk/edit?usp=sharing
