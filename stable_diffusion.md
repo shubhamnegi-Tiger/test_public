@@ -107,3 +107,16 @@ Figure 9: Image created by Training DreamBooth
 ||  Learning Rate: 0.00001
 ||  Optimizer: 8bit_adam
 ||  Number of Images:9
+
+<a name="_toc135249780"></a>**ControlNet**: ControlNet is a neural network structure to control diffusion models by adding extra conditions. It copys the weights of neural network blocks into a "locked" copy and a "trainable" copy. The "trainable" one learns your condition. The "locked" one preserves your model.Thanks to this, training with small dataset of image pairs will not destroy the production-ready diffusion models.
+ControlNet helps us to capture the outline of a photo (like an edge detector) and try to generate image on top of those outlines.
+
+![10](https://user-images.githubusercontent.com/110606035/261204604-f57c2cca-3dc3-4cc8-81f8-f03706f6375d.png)
+
+Figure 10: ControlNet
+
+![11](https://user-images.githubusercontent.com/110606035/261208156-d87c131b-59db-4220-8511-b5c877a433aa.png)
+
+Figure 11: A person image with different ethinicity using LoRA + ControlNet
+
+Addtional Images are stored in https://docs.google.com/spreadsheets/d/16giicKZm9qsI-0wTvweU500r3ag3vhNac70bwAuntLk/edit?usp=sharing
