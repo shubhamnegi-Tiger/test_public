@@ -283,11 +283,12 @@ The method takes as input a few images of a subject (e.g., a specific dog) and t
 
 **DreamBooth Training**
 
-For fine-tuning the model with DreamBooth, we created a dataset with 28 images of a child eating ice cream.Training Images Must all be of exact dimensions (512×512).All images are different and from different angles and backgrounds. The unique identifier used is "chice."
+**Child**:For fine-tuning the model with DreamBooth, we created a dataset with 28 images of a child eating ice cream.Training Images Must all be of exact dimensions (512×512).All images are different and from different angles and backgrounds. The unique identifier used is "chice."
 The images were renamed using the unique identifier. We gave detailed captions for each image and trained the model with 2000 training steps and 5e-6 learning rate.
 
-And another dataset with 38 images of same family members from differnet angles and backgrounds and resized to 512*512.The unique identifier used is "famtog."The images were renamed using the unique identifier. We gave detailed captions for each image and trained the model with 2000 training steps and 5e-6 learning rate.
+**Family**:And another dataset with 38 images of same family members from differnet angles and backgrounds and resized to 512*512.The unique identifier used is "famtog."The images were renamed using the unique identifier. We gave detailed captions for each image and trained the model with 2000 training steps and 5e-6 learning rate.
 
+**Chocos**: Here we used a relatively small dataset of 9 images resized to 512X512. The unique identifier was "uxz". The base model used was SDv1.5 and trained with 800 steps with e-5 learning rate and 8bit_adam optimizers.
 
 ### Samples Images Generated using DreamBooth
 
@@ -317,6 +318,15 @@ And another dataset with 38 images of same family members from differnet angles 
 
 <p>
 <img align="center"  width="500" height="400" src="https://user-images.githubusercontent.com/106384866/235664659-d5c582cb-4e0d-437b-b424-4632f6a68999.png">
+<br/>
+<br/>
+</p>
+.....
+
+**3) A bowl of uxz(chocos) on a wooden table with some uxz(chocos) lying on the table**
+
+<p>
+<img align="center"  width="500" height="400" src="https://user-images.githubusercontent.com/110606035/261001294-0b89065a-cefc-491b-9b57-ed6bdad42238.png">
 <br/>
 <br/>
 </p>
@@ -352,11 +362,27 @@ The Checkpoints for famtog model can be found  [here](https://drive.google.com/d
 
 LoRA (Low-Rank Adaptation) is a training technique for fine-tuning Stable Diffusion models. LoRA models operate by applying minute changes to the most critical part of Stable Diffusion models—the cross-attention layers. This is the part where the image and the prompt intersect, and researchers have found that fine-tuning this section yields excellent training results.
 
+**LoRA**
+
+**Person**:For fine-tuning the SDv1.5 model with LoRA, we created a dataset with 19 images of a particular person.Training Images Must all be of exact dimensions (512×512).All images are different and from different angles and backgrounds. The unique identifier used is "olsen". We gave detailed captions for each image and trained the model with 1900 training steps and 4e-4 learning rate.
+
+**Chocos**: Here we used a relatively small dataset of 9 images resized to 512X512. The unique identifier was "choxz".We gave detailed captions for each image. The base model used was SDv1.5 and trained with 900 steps with 4e-4 learning rate and adafactor optimizers.
+
+### Samples Images Generated using LoRA
+
+**1) A Women Olsen in braids wearing a white dress posing for a camera**
+
+<p>
+<img align="center"  width="500" height="400" src="https://user-images.githubusercontent.com/106384866/235663914-6b9a3695-6321-4779-abc5-d3a6df276194.png">
+<br/>
+<br/>
+</p>
+.....
 ![7](https://user-images.githubusercontent.com/110606035/260972276-56dc72f6-2af3-4f93-8871-0fc1b67c4492.png)
 
 Figure 7: Image created by Training LoRA
 ||  Base Model: SDv1.5
-||  Number of Epochs:100
+||  Number of Epochs:900
 ||  Learning Rate: 0.0004
 ||  Optimizer: Adafactor
 ||  Number of Images:9
