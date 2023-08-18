@@ -362,7 +362,7 @@ The Checkpoints for famtog model can be found  [here](https://drive.google.com/d
 
 LoRA (Low-Rank Adaptation) is a training technique for fine-tuning Stable Diffusion models. LoRA models operate by applying minute changes to the most critical part of Stable Diffusion models—the cross-attention layers. This is the part where the image and the prompt intersect, and researchers have found that fine-tuning this section yields excellent training results.
 
-**LoRA**
+**LoRA training**
 
 **Person**:For fine-tuning the SDv1.5 model with LoRA, we created a dataset with 19 images of a particular person.Training Images Must all be of exact dimensions (512×512).All images are different and from different angles and backgrounds. The unique identifier used is "olsen". We gave detailed captions for each image and trained the model with 1900 training steps and 4e-4 learning rate.
 
@@ -378,14 +378,16 @@ LoRA (Low-Rank Adaptation) is a training technique for fine-tuning Stable Diffus
 <br/>
 </p>
 .....
-![7](https://user-images.githubusercontent.com/110606035/260972276-56dc72f6-2af3-4f93-8871-0fc1b67c4492.png)
 
-Figure 7: Image created by Training LoRA
-||  Base Model: SDv1.5
-||  Number of Epochs:900
-||  Learning Rate: 0.0004
-||  Optimizer: Adafactor
-||  Number of Images:9
+**1) A white bowl of chocos on a napkin placed on a wooden table with some chocos on the table**
+
+<p>
+<img align="center"  width="500" height="400" src="https://user-images.githubusercontent.com/110606035/260972276-56dc72f6-2af3-4f93-8871-0fc1b67c4492.png">
+<br/>
+<br/>
+</p>
+.....
+
 
 ## Textual Inversion
 
@@ -395,14 +397,21 @@ Textual Inversion is a technique that allows us to add new styles or objects to 
 
 Textual inversion learns a new token embedding (v* in the diagram above). A prompt (that includes a token which will be mapped to this new embedding) is used in conjunction with a noised version of one or more training images as inputs to the generator model, which attempts to predict the denoised version of the image. The embedding is optimized based on how well the model does at this task - an embedding that better captures the object or style shown by the training images will give more useful information to the diffusion model and thus result in a lower denoising loss. After many steps (typically several thousand) with a variety of prompt and image variants the learned embedding should hopefully capture the essence of the new concept being taught.
 
-![9](https://user-images.githubusercontent.com/110606035/261001686-a6cd3ecb-d6b9-45fc-9241-65b7ea437463.png)
+**Textual Inversion training**
 
-Figure 9: Image created by Training Textual Inversion
-||  Base Model: SDv1.5
-||  Number of Epochs:3000
-||  Learning Rate: 0.05:10, 0.02:20, 0.01:60, 0.005:200, 0.002:500, 0.001:3000
-||  Optimizer: Adafactor
-||  Number of Images:9
+**Chocos**: Here we used a relatively small dataset of 9 images resized to 512X512. The unique identifier was "xoxz".We gave detailed captions for each image. The base model used was SDv1.5 and trained with 3000 steps with variable learning rate of 0.05:10, 0.02:20, 0.01:60, 0.005:200, 0.002:500, 0.001:3000 and adafactor optimizers.
+
+### Samples Images Generated using LoRA
+
+**1) A white bowl of chocos on a grey background**
+
+<p>
+<img align="center"  width="500" height="400" src="https://user-images.githubusercontent.com/110606035/261001686-a6cd3ecb-d6b9-45fc-9241-65b7ea437463.png">
+<br/>
+<br/>
+</p>
+.....
+
 
 ![9](https://user-images.githubusercontent.com/110606035/261229325-c2de9fa4-da18-4629-8f0a-66473e85c9fc.png)
 Figure 9: Training Textual Inversion on bowl of chocos
