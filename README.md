@@ -323,10 +323,10 @@ The images were renamed using the unique identifier. We gave detailed captions f
 </p>
 .....
 
-**3) A bowl of uxz(chocos) on a wooden table with some uxz(chocos) lying on the table**
+**4) A bowl of uxz(chocos) on a wooden table with some uxz(chocos) lying on the table**
 
 <p>
-<img align="center"  width="500" height="400" src="https://user-images.githubusercontent.com/110606035/261001294-0b89065a-cefc-491b-9b57-ed6bdad42238.png">
+<img align="center"  width="500" height="500" src="https://user-images.githubusercontent.com/110606035/261001294-0b89065a-cefc-491b-9b57-ed6bdad42238.png">
 <br/>
 <br/>
 </p>
@@ -373,16 +373,18 @@ LoRA (Low-Rank Adaptation) is a training technique for fine-tuning Stable Diffus
 **1) A Women Olsen in braids wearing a white dress posing for a camera**
 
 <p>
-<img align="center"  width="500" height="400" src="https://user-images.githubusercontent.com/106384866/235663914-6b9a3695-6321-4779-abc5-d3a6df276194.png">
+<img align="center"  width="500" height="500" src="https://user-images.githubusercontent.com/110606035/261555142-06b97d39-b30e-4293-93bb-f35ab506547e.png">
 <br/>
 <br/>
 </p>
 .....
 
-**1) A white bowl of chocos on a napkin placed on a wooden table with some chocos on the table**
+
+
+**2) A white bowl of chocos on a napkin placed on a wooden table with some chocos on the table**
 
 <p>
-<img align="center"  width="500" height="400" src="https://user-images.githubusercontent.com/110606035/260972276-56dc72f6-2af3-4f93-8871-0fc1b67c4492.png">
+<img align="center"  width="500" height="500" src="https://user-images.githubusercontent.com/110606035/260972276-56dc72f6-2af3-4f93-8871-0fc1b67c4492.png">
 <br/>
 <br/>
 </p>
@@ -406,7 +408,7 @@ Textual inversion learns a new token embedding (v* in the diagram above). A prom
 **1) A white bowl of chocos on a grey background**
 
 <p>
-<img align="center"  width="500" height="400" src="https://user-images.githubusercontent.com/110606035/261001686-a6cd3ecb-d6b9-45fc-9241-65b7ea437463.png">
+<img align="center"  width="500" height="500" src="https://user-images.githubusercontent.com/110606035/261001686-a6cd3ecb-d6b9-45fc-9241-65b7ea437463.png">
 <br/>
 <br/>
 </p>
@@ -450,12 +452,18 @@ While the current exploration of our text to image generation model has achieved
 # Conclusion
 
 Text to image generation is a challenging but exciting area of research, and this repository provides a point for exploring this field. 
-Using `Negative prompts`, we were able to improve the quality of the images much, especially the images with human faces. But still, there is more room to improve. This made us try other techniques like DreamBooth.
+Using `Negative prompts`, we were able to improve the quality of the images much, especially the images with human faces. But still, there is more room to improve. This made us try other finetuning techniques like DreamBooth, LoRA, ControlNet and Textual Inversion
 
 Stable Diffusion models tend to overfit when fine-tuning on a few images.High learning rates and too many training steps will lead to overfitting. The model will mostly generate images from your training data, no matter what prompt is used. Low learning rates and too few steps will lead to underfitting: the model will not be able to generate the concept we were trying to incorporate. Therefore, we need to select the parameters such as max_training steps and learning rate carefully.
 
 Low learning rates and too few steps will lead to underfitting, this is when the model can not generate the trained concept.
 The results of `DreamBooth` in terms of the child face are satisfying while group of peoples or famlily need to be improved. The model is able to generate images of the child without overfitting.The repository includes all the code for various models mentioned, its performance comparisons and can experiment with different parameters for corresponding models.
+
+LoRA fineutuned on SDv1.5 are a good option when you want to train a particular person or an object. Getting good photographs from every angle is import for best results. Then by using the power of prompts and imagination we can place the person or the object at any place of position.
+
+Textual Inversion is also a better option compare to LoRA and Stable Diffusion as the Textual Inversion Checkpoints are only of few kBs ~10kB. The Textual Inversion can also be used with negative prompts thereby enchancing the the resultant images by removing unwanted things in image.
+
+ControlNet is the best when you want the structure or the design in the original input stays preserved.
 
 # Reference
 
